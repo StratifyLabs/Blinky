@@ -18,7 +18,7 @@ int main(int argc, char * argv[]){
 	core.get_mcu_board_config(config);
 	core.close();
 
-	printf("Blinky is on %d.%d\n", config.led.port, config.led.pin);
+	printf("Blinky is on port %d.%d\n", config.led.port, config.led.pin);
 
 	Pin pin(config.led.port, config.led.pin);
 	pin.init(Pin::OUTPUT);
