@@ -1,10 +1,17 @@
 {
-    "AppBuild": "build_release_armv7em_fpu",
-    "AppBuildPrefix": "build_",
-    "AppInstallPath": "/app/.install",
-    "AppRamSize": 4096,
-    "IsAppInstallAll": false,
-    "IsAppInstallFiles": false,
-    "IsAppRam": false,
-    "IsAppStartup": false
+    "LocalBuild": "build_release_armv7m",
+    "LocalInstallPath": "/app/.install",
+    "LocalIsRam": false,
+    "LocalIsStartup": false,
+    "LocalProjectId": "-KYj6OsVYaJagcx5cSu8",
+    "buildprefix": "build_",
+    "description": "Blinky is a simple program that uses the IO to turn an LED on and off.",
+    "github": "https://github.com/StratifyLabs/Blinky",
+    "hardwareid": "",
+    "name": "Blinky",
+    "publisher": "Stratify Labs, Inc",
+    "ram": 8192,
+    "tags": "demo",
+    "type": "StratifyApp",
+    "version": "1.0"
 }
