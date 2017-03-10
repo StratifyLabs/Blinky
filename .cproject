@@ -51,7 +51,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.564376669" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
 								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.2031569760" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.size" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.728845853" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.preprocessor.def.symbols.335916525" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.335916525" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false"/>
 								<option id="gnu.c.compiler.option.misc.other.1754110943" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c ${C_FLAGS}" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1710475818" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -59,7 +59,7 @@
 								<option id="gnu.cpp.compiler.option.optimization.level.2124984081" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.size" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.137942992" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.other.other.1617765176" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c ${CXX_FLAGS}" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.preprocessor.def.1607840445" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1607840445" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1628522044" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1862701735" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
@@ -134,11 +134,11 @@
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.231202084" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="${HOST}-" valueType="string"/>
 							<option id="cdt.managedbuild.option.gnu.cross.path.152108898" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value=" ${PathDelimiter}${TOOLSPATH}/bin" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.572789559" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
-							<builder autoBuildTarget="all" buildPath="${workspace_loc:/HelloWorld}/Release" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.315223237" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/HelloWorld}/build_release_armv7em_fpu" cleanBuildTarget="clean" id="org.eclipse.cdt.build.core.internal.builder.261619547" incrementalBuildTarget="all" managedBuildOn="true" name="CDT Internal Builder" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.616156074" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
 								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.1727116031" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.size" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.302937115" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1061242658" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1061242658" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false"/>
 								<option id="gnu.c.compiler.option.misc.other.1495834933" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c ${C_FLAGS}" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1569713514" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -146,7 +146,7 @@
 								<option id="gnu.cpp.compiler.option.optimization.level.180578732" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.size" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.921833391" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.other.other.1632678658" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c ${CXX_FLAGS}" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.preprocessor.def.1045350151" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1045350151" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.452161136" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.2141023932" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
@@ -185,15 +185,16 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="build"/>
+		<configuration configurationName="release_macx"/>
 		<configuration configurationName="release_win">
 			<resource resourceType="PROJECT" workspacePath="/HelloWorld"/>
 		</configuration>
-		<configuration configurationName="Release"/>
-		<configuration configurationName="release_macx"/>
-		<configuration configurationName="build"/>
 		<configuration configurationName="build_release_armv7m">
 			<resource resourceType="PROJECT" workspacePath="/HelloWorld"/>
 		</configuration>
+		<configuration configurationName="build_release_armv7em_fpu"/>
+		<configuration configurationName="Release"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
