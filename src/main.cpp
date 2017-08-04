@@ -3,31 +3,32 @@
 
 
 //see http://stratifylabs.co/StratifyLib/html/annotated.html for docs
-#include <stfy/hal.hpp>
-#include <stfy/var.hpp>
-#include <stfy/sys.hpp>
+#include <sapi/hal.hpp>
+#include <sapi/var.hpp>
+#include <sapi/sys.hpp>
 
 
 static void print_usage();
 
 int main(int argc, char * argv[]){
 
-	pio_t blink_port;
+	mcu_pin_t blink_port;
 	Cli cli(argc, argv);
-	cli.set_version("1.1");
 	cli.set_publisher("Stratify Labs, Inc");
-
-	if( cli.is_option("--version") || cli.is_option("-v") ){
-		cli.print_version();
-		exit(1);
-	}
+	cli.handle_version();
 
 	if( cli.is_option("--help") || cli.is_option("-h") ){
 		print_usage();
 	}
 
+	blink_port.port = 255;
+	blink_port.pin = 255;
 
-	if( cli.size() == 1 ){
+	if( cli.size() > 1 ){
+		blink_port = cli.pin_at(1);
+	}
+
+	if( blink_port.port == 255 ){
 		//first get the LED info from the board
 		Core core(0);
 		mcu_board_config_t config;
@@ -38,21 +39,20 @@ int main(int argc, char * argv[]){
 
 		blink_port = config.led;
 
-	} else {
-		blink_port = cli.pio_at(1);
 	}
 
 	if( blink_port.port == 255 ){
-		printf("Failed to find pin\n");
+		printf("Failed to find LED pin\n");
 		exit(1);
 	}
 
 	printf("Blinky is on port %d.%d\n", blink_port.port, blink_port.pin);
 
 	Pin pin(blink_port.port, blink_port.pin);
-	pin.init(Pin::OUTPUT);
+	pin.init(Pin::FLAG_SET_OUTPUT);
 
 	while(1){
+		pin.set_attr(Pin::FLAG_SET_OUTPUT);
 		pin = true;
 		Timer::wait_msec(250);
 		pin = false;
