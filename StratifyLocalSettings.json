@@ -1,0 +1,8 @@
+{
+    "LocalBuild": "build_release_armv7m",
+    "LocalInstallPath": "/app/.install",
+    "LocalIsInstallAssets": false,
+    "LocalIsRam": false,
+    "LocalIsStartup": false,
+    "LocalProjectId": "-L2TpO56pY3eLxwSKz_3"
+}
