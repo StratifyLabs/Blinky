@@ -7,7 +7,6 @@
 #include <sapi/var.hpp>
 #include <sapi/sys.hpp>
 
-
 static void print_usage();
 
 int main(int argc, char * argv[]){
@@ -49,10 +48,10 @@ int main(int argc, char * argv[]){
 	printf("Blinky is on port %d.%d\n", blink_port.port, blink_port.pin);
 
 	Pin pin(blink_port.port, blink_port.pin);
-	pin.init(Pin::FLAG_SET_OUTPUT);
+	pin.initialize(Pin::FLAG_SET_OUTPUT);
 
 	while(1){
-		pin.set_attr(Pin::FLAG_SET_OUTPUT);
+		pin.set_attributes(Pin::FLAG_SET_OUTPUT);
 		pin = true;
 		Timer::wait_msec(250);
 		pin = false;

@@ -1,0 +1,19 @@
+{
+   "description": "Blinky is a simple program that uses the IO to turn an LED on and off.",
+   "github": "https://github.com/StratifyLabs/Blinky",
+   "name": "Blinky",
+   "permissions": "public",
+   "publisher": "Stratify Labs, Inc",
+   "tags": "demo",
+   "type": "app",
+   "uid": "9cQyOTk3fZXOuMtPyf5j9X4H4b83",
+   "version": "1.6",
+   "hardwaredId": "",
+   "ramSize": 8192,
+   "timestamp": 1543158652,
+   "documentId": "8PtMwYjOghdeUpMxPmyl",
+   "buildList": {
+      "fycazhEDkgh3FnwnZg2t": "1.5",
+      "ou1ukQYNpMhQW1qoGv2l": "1.6"
+   }
+}
