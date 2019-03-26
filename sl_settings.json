@@ -4,16 +4,18 @@
    "name": "Blinky",
    "permissions": "public",
    "publisher": "Stratify Labs, Inc",
-   "tags": "demo",
+   "tags": "utility",
    "type": "app",
    "uid": "9cQyOTk3fZXOuMtPyf5j9X4H4b83",
-   "version": "1.6",
-   "hardwaredId": "",
+   "version": "1.7",
    "ramSize": 8192,
-   "timestamp": 1543158652,
+   "timestamp": 1552190690,
    "documentId": "8PtMwYjOghdeUpMxPmyl",
    "buildList": {
       "fycazhEDkgh3FnwnZg2t": "1.5",
-      "ou1ukQYNpMhQW1qoGv2l": "1.6"
-   }
+      "ou1ukQYNpMhQW1qoGv2l": "1.6",
+      "yv2hV2gnoMZACvZK87Pk": "1.7"
+   },
+   "hardwareId": "",
+   "readme": "IyBCbGlua3kKClRoaXMgcHJvamVjdCBzaG93cyBqdXN0IGhvdyBlYXN5IGl0IGlzIHRvIHdyaXRlIHByb2dyYW1zIGZvciBTdHJhdGlmeSBPUy4gIFN0cmF0aXR5IE9TIGluY2x1ZGluZyBhY2Nlc3NpbmcgR1BJTyBhbmQgdXNpbmcgdGltZXJzLgoKSWYgeW91IGhhdmVuJ3QgYWxyZWFkeSBkb25lIHNvLCB5b3UgbmVlZCB0byBnZXQgc2V0IHVwIHdpdGggc29tZSBoYXJkd2FyZSBhbmQgdGhlIHNvZnR3YXJlIHRvb2xzIHVzaW5nIHRoZSBbU3RyYXRpZnkgTGFicyB3ZWIgYXBwbGljYXRpb25dKGh0dHBzOi8vYXBwLnN0cmF0aWZ5bGFicy5jby8pIHdoaWNoIGhhcyBpbnN0YWxsYXRpb24gaW5zdHJ1Y3Rpb25zIGFuZCB0dXRvcmlhbHMuCgpPbmNlIHlvdSBpbnN0YWxsIHRoZSBjb21tYW5kIGxpbmUgdG9vbCwgeW91IGNhbiBjbG9uZSBhbmQgYnVpbGQgQmxpbmt5IHVzaW5nOgoKYGBgCnNsIGFwcGxpY2F0aW9uLmNyZWF0ZTpuYW1lPUJsaW5reSxmcm9tPUJsaW5reQpzbCBhcHBsaWNhdGlvbi5idWlsZDpwYXRoPUJsaW5reQpzbCBhcHBsaWNhdGlvbi5pbnN0YWxsOnBhdGg9Qmxpbmt5LHJ1bix0ZXJtaW5hbCAjIG5lZWQgY29ubmVjdGVkIGhhcmR3YXJlIGZvciB0aGlzIG9uZQpgYGAKCg=="
 }

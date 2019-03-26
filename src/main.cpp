@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 
-//see http://stratifylabs.co/StratifyLib/html/annotated.html for docs
+//see http://docs.stratifylabs.co for docs
 #include <sapi/hal.hpp>
 #include <sapi/var.hpp>
 #include <sapi/sys.hpp>
@@ -50,12 +50,13 @@ int main(int argc, char * argv[]){
 	Pin pin(blink_port.port, blink_port.pin);
 	pin.initialize(Pin::FLAG_SET_OUTPUT);
 
+
 	while(1){
 		pin.set_attributes(Pin::FLAG_SET_OUTPUT);
 		pin = true;
-		Timer::wait_msec(250);
+		Timer::wait_milliseconds(250);
 		pin = false;
-		Timer::wait_msec(250);
+		Timer::wait_milliseconds(250);
 	}
 
 	return 0;
