@@ -7,9 +7,9 @@ elseif( ${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows" )
 else()
 	message(FATAL_ERROR "Cross compiling is not yet supportd on: " ${CMAKE_HOST_SYSTEM_NAME})
 endif()
-set(CMAKE_TOOLCHAIN_FILE ${SOS_TOOLCHAIN_CMAKE_PATH}/sos-app-toolchain.cmake)
 
 include(${SOS_TOOLCHAIN_CMAKE_PATH}/sos-variables.cmake)
+set(CMAKE_TOOLCHAIN_FILE ${SOS_TOOLCHAIN_CMAKE_PATH}/sos-app-toolchain.cmake)
 
 # This will set the default RAM used by the application
 set(SOS_RAM_SIZE 8192)
