@@ -47,16 +47,17 @@ int main(int argc, char * argv[]){
 
 	printf("Blinky is on port %d.%d\n", blink_port.port, blink_port.pin);
 
-	Pin pin(blink_port.port, blink_port.pin);
-	pin.initialize(Pin::FLAG_SET_OUTPUT);
+	Pin pin(Pin::Port(blink_port.port),
+			  Pin::Number(blink_port.pin));
 
+	pin.initialize(Pin::SET_OUTPUT);
 
 	while(1){
-		pin.set_attributes(Pin::FLAG_SET_OUTPUT);
+		pin.set_attributes(Pin::SET_OUTPUT);
 		pin = true;
-		Timer::wait_milliseconds(250);
+		chrono::wait(chrono::Milliseconds(250));
 		pin = false;
-		Timer::wait_milliseconds(250);
+		chrono::wait(chrono::Milliseconds(250));
 	}
 
 	return 0;
