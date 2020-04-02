@@ -1,3 +1,4 @@
+//COPYING: Copyright 2011-2020 Stratify Labs, Inc
 #include <stdio.h>
 #include <unistd.h>
 
