@@ -6,8 +6,8 @@
 #ifndef SL_CONFIG_H_
 #define SL_CONFIG_H_
 
-#define SL_CONFIG_VERSION_STRING "1.7"
-#define SL_CONFIG_VERSION_BCD 0x107
+#define SL_CONFIG_VERSION_STRING "1.10"
+#define SL_CONFIG_VERSION_BCD 0x10A
 #define SL_CONFIG_DOCUMENT_ID "8PtMwYjOghdeUpMxPmyl"
 #define SL_CONFIG_TEAM_ID ""
 #define SL_CONFIG_NAME "Blinky"

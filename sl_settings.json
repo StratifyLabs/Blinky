@@ -7,15 +7,17 @@
    "tags": "utility",
    "type": "app",
    "uid": "9cQyOTk3fZXOuMtPyf5j9X4H4b83",
-   "version": "1.8",
+   "version": "1.10",
    "ramSize": 8192,
-   "timestamp": 1584827112,
+   "timestamp": 1589780166,
    "documentId": "8PtMwYjOghdeUpMxPmyl",
    "buildList": {
       "fycazhEDkgh3FnwnZg2t": "1.5",
       "ou1ukQYNpMhQW1qoGv2l": "1.6",
       "yv2hV2gnoMZACvZK87Pk": "1.7",
-      "g9URtfp8lZbRlmRkKwjN": "1.8"
+      "g9URtfp8lZbRlmRkKwjN": "1.8",
+      "tUL4okehJFQvGeqhkRZM": "1.9",
+      "3rBSD0EN9AT7bZXvL4xD": "1.10"
    },
    "hardwareId": ""
 }
