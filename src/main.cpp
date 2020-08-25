@@ -51,10 +51,10 @@ int main(int argc, char * argv[]){
 	Pin pin(Pin::Port(blink_port.port),
 			  Pin::Number(blink_port.pin));
 
-	pin.initialize(Pin::SET_OUTPUT);
+	pin.initialize(Pin::flag_set_output);
 
 	while(1){
-		pin.set_attributes(Pin::SET_OUTPUT);
+		pin.set_attributes(Pin::flag_set_output);
 		pin = true;
 		chrono::wait(chrono::Milliseconds(250));
 		pin = false;
