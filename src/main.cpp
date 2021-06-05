@@ -1,74 +1,78 @@
-//COPYING: Copyright 2011-2020 Stratify Labs, Inc
+// COPYING: Copyright 2011-2021 Stratify Labs, Inc
 #include <stdio.h>
 #include <unistd.h>
 
+#include <chrono.hpp>
+#include <hal.hpp>
+#include <sys.hpp>
+#include <var.hpp>
 
-//see http://docs.stratifylabs.co for docs
-#include <sapi/hal.hpp>
-#include <sapi/var.hpp>
-#include <sapi/sys.hpp>
+#include "sl_config.h"
 
 static void print_usage();
 
-int main(int argc, char * argv[]){
+class Options {
+public:
+  Options(const Cli &cli) {
+    if (const auto pin_arg = cli.get_option("pin");
+        pin_arg.is_empty() == false) {
+      m_pin = pin_arg;
+    }
 
-	mcu_pin_t blink_port;
-    Cli cli(argc, argv, SOS_GIT_HASH);
-	cli.set_publisher("Stratify Labs, Inc");
-	cli.handle_version();
+    if (const auto period_arg = cli.get_option("period");
+        period_arg.is_empty() == false) {
+      m_period = period_arg.to_integer() * 1_milliseconds;
+    } else {
+      m_period = 500_milliseconds;
+    }
+  }
 
-	if( cli.is_option("--help") || cli.is_option("-h") ){
-		print_usage();
-	}
+private:
+  API_AC(Options, PathString, pin);
+  API_AC(Options, MicroTime, period);
+};
 
-	blink_port.port = 255;
-	blink_port.pin = 255;
+int main(int argc, char *argv[]) {
 
-	if( cli.size() > 1 ){
-		blink_port = cli.pin_at(1);
-	}
+  Cli cli(argc, argv);
+  Options options(cli);
 
-	if( blink_port.port == 255 ){
-		//first get the LED info from the board
-		Core core(0);
-		mcu_board_config_t config;
+  if (cli.get_option("help") == "true") {
+    print_usage();
+    exit(0);
+  }
 
-		core.open();
-		core.get_mcu_board_config(config);
-		core.close();
+  if (cli.get_option("version") == "true") {
+    printf("Blinky version " SL_CONFIG_VERSION_STRING);
+    exit(0);
+  }
 
-		blink_port = config.led;
+  if( options.pin().is_empty() ){
+    printf("Error: you must specify the pin to flash the LED\n");
+    print_usage();
+    exit(1);
+  }
 
-	}
+  Pin pin(Pin::from_string(options.pin()));
+  if (pin.is_error()) {
+    printf("failed to use pin %s for LED\n", options.pin().cstring());
+    exit(1);
+  }
 
-	if( blink_port.port == 255 ){
-		printf("Failed to find LED pin\n");
-		exit(1);
-	}
+  printf("flashing LED on pin %s every %d ms\n", options.pin().cstring(),
+         options.period().milliseconds());
+  pin.set_output();
 
-	printf("Blinky is on port %d.%d\n", blink_port.port, blink_port.pin);
+  while (1) {
+    pin.set_value(true)
+        .wait(options.period() / 2)
+        .set_value(false)
+        .wait(options.period() / 2);
+  }
 
-	Pin pin(Pin::Port(blink_port.port),
-			  Pin::Number(blink_port.pin));
-
-	pin.initialize(Pin::flag_set_output);
-
-	while(1){
-		pin.set_attributes(Pin::flag_set_output);
-		pin = true;
-		chrono::wait(chrono::Milliseconds(250));
-		pin = false;
-		chrono::wait(chrono::Milliseconds(250));
-	}
-
-	return 0;
+  return 0;
 }
 
-void print_usage(){
-	printf("Usage:\n");
-	printf("Blink on the default LED supplied by kernel\n");
-	printf("\tBlinky\n\n");
-	printf("Blink on the port/pin combination specified\n");
-	printf("\tBlinky [X.Y]\n\n");
-	exit(0);
+void print_usage() {
+  printf("Usage: Blinky --pin=<port.pin> --period=<milliseconds>");
 }

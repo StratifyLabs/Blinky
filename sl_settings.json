@@ -4,12 +4,11 @@
    "name": "Blinky",
    "permissions": "public",
    "publisher": "Stratify Labs, Inc",
-   "tags": "utility",
    "type": "app",
    "uid": "9cQyOTk3fZXOuMtPyf5j9X4H4b83",
-   "version": "1.10",
+   "version": "1.11",
    "ramSize": 8192,
-   "timestamp": 1589780166,
+   "timestamp": 1622921927,
    "documentId": "8PtMwYjOghdeUpMxPmyl",
    "buildList": {
       "fycazhEDkgh3FnwnZg2t": "1.5",
@@ -17,7 +16,12 @@
       "yv2hV2gnoMZACvZK87Pk": "1.7",
       "g9URtfp8lZbRlmRkKwjN": "1.8",
       "tUL4okehJFQvGeqhkRZM": "1.9",
-      "3rBSD0EN9AT7bZXvL4xD": "1.10"
+      "3rBSD0EN9AT7bZXvL4xD": "1.10",
+      "qh5oW2NNiGssK2JuwBN9": "1.11"
    },
-   "hardwareId": ""
+   "hardwareId": "",
+   "tagList": [
+      "utility"
+   ],
+   "team": ""
 }
