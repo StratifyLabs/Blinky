@@ -1,11 +1,14 @@
 // COPYING: Copyright 2011-2021 Stratify Labs, Inc
-#include <stdio.h>
-#include <unistd.h>
 
-#include <chrono.hpp>
-#include <hal.hpp>
-#include <sys.hpp>
-#include <var.hpp>
+#include <chrono/MicroTime.hpp>
+#include <hal/Pin.hpp>
+#include <sys/Cli.hpp>
+#include <var/StackString.hpp>
+
+using namespace sys;
+using namespace hal;
+using namespace chrono;
+using namespace var;
 
 #include "sl_config.h"
 
@@ -14,13 +17,11 @@ static void print_usage();
 class Options {
 public:
   Options(const Cli &cli) {
-    if (const auto pin_arg = cli.get_option("pin");
-        pin_arg.is_empty() == false) {
+    if (const auto pin_arg = cli.get_option("pin"); pin_arg) {
       m_pin = pin_arg;
     }
 
-    if (const auto period_arg = cli.get_option("period");
-        period_arg.is_empty() == false) {
+    if (const auto period_arg = cli.get_option("period"); period_arg) {
       m_period = period_arg.to_integer() * 1_milliseconds;
     } else {
       m_period = 500_milliseconds;
@@ -47,7 +48,7 @@ int main(int argc, char *argv[]) {
     exit(0);
   }
 
-  if( options.pin().is_empty() ){
+  if (options.pin().is_empty()) {
     printf("Error: you must specify the pin to flash the LED\n");
     print_usage();
     exit(1);
@@ -59,15 +60,17 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
 
-  printf("flashing LED on pin %s every %d ms\n", options.pin().cstring(),
-         options.period().milliseconds());
+  printf(
+    "flashing LED on pin %s every %lu ms\n",
+    options.pin().cstring(),
+    options.period().milliseconds());
   pin.set_output();
 
-  while (1) {
+  while (true) {
     pin.set_value(true)
-        .wait(options.period() / 2)
-        .set_value(false)
-        .wait(options.period() / 2);
+      .wait(options.period() / 2)
+      .set_value(false)
+      .wait(options.period() / 2);
   }
 
   return 0;
