@@ -16,7 +16,7 @@ static void print_usage();
 
 class Options {
 public:
-  Options(const Cli &cli) {
+  explicit Options(const Cli &cli) {
     if (const auto pin_arg = cli.get_option("pin"); pin_arg) {
       m_pin = pin_arg;
     }
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
 
-  const auto pin = Pin(Pin::from_string(options.pin()));
+  const auto pin = Pin(Pin::from_string(options.pin())).set_output();
   if (pin.is_error()) {
     printf("failed to use pin %s for LED\n", options.pin().cstring());
     exit(1);
@@ -64,7 +64,6 @@ int main(int argc, char *argv[]) {
     "flashing LED on pin %s every %lu ms\n",
     options.pin().cstring(),
     options.period().milliseconds());
-  pin.set_output();
 
   while (true) {
     pin.set_value(true)
