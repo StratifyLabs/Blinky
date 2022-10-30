@@ -35,8 +35,8 @@ private:
 
 int main(int argc, char *argv[]) {
 
-  Cli cli(argc, argv);
-  Options options(cli);
+  const auto cli = Cli(argc, argv);
+  const auto options = Options(cli);
 
   if (cli.get_option("help") == "true") {
     print_usage();
@@ -48,13 +48,13 @@ int main(int argc, char *argv[]) {
     exit(0);
   }
 
-  if (options.pin().is_empty()) {
+  if (!options.pin()) {
     printf("Error: you must specify the pin to flash the LED\n");
     print_usage();
     exit(1);
   }
 
-  Pin pin(Pin::from_string(options.pin()));
+  const auto pin = Pin(Pin::from_string(options.pin()));
   if (pin.is_error()) {
     printf("failed to use pin %s for LED\n", options.pin().cstring());
     exit(1);
